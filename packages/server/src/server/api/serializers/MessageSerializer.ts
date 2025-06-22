@@ -127,6 +127,7 @@ export class MessageSerializer {
         isForNotification = false
     }: MessageSerializerSingleParams): Promise<MessageResponse> {
         let output: MessageResponse = {
+            locationID: process.env.LOCATION_ID,
             originalROWID: message.ROWID,
             guid: message.guid,
             text: message.universalText(true),

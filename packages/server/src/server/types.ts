@@ -23,6 +23,7 @@ export type ServerMetadataResponse = {
  * 3: Someone left the conversation (handle_id shows who)
  */
 export type MessageResponse = {
+    locationID: string;
     originalROWID: number;
     tempGuid?: string;
     guid: string;
