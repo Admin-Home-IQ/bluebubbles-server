@@ -1,3 +1,6 @@
+import path from 'path';
+import { readFileSync } from 'fs';
+
 export const DEFAULT_ATTACHMENT_CONFIG = {
     convert: true,
     loadData: false,
@@ -26,3 +29,7 @@ export const DEFAULT_HANDLE_CONFIG = {
     includeChats: false,
     includeMessages: false
 };
+
+const homeDir = process?.env?.HOME ?? process?.env?.HOMEPATH ?? process?.env?.USERPROFILE;
+export const USER_CONFIG_FILE = JSON.parse(readFileSync(path.join(homeDir, 'user_config.json'), 'utf8'));
+

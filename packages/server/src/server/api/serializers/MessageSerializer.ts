@@ -4,7 +4,7 @@ import { isMinHighSierra, isMinMonterey, isMinVentura } from "@server/env";
 import { HandleResponse, MessageResponse } from "@server/types";
 import { AttachmentSerializer } from "./AttachmentSerializer";
 import { ChatSerializer } from "./ChatSerializer";
-import { DEFAULT_ATTACHMENT_CONFIG, DEFAULT_MESSAGE_CONFIG } from "./constants";
+import { DEFAULT_ATTACHMENT_CONFIG, DEFAULT_MESSAGE_CONFIG, USER_CONFIG_FILE } from "./constants";
 import { HandleSerializer } from "./HandleSerializer";
 import type { MessageSerializerMultiParams, MessageSerializerSingleParams } from "./types";
 
@@ -127,7 +127,7 @@ export class MessageSerializer {
         isForNotification = false
     }: MessageSerializerSingleParams): Promise<MessageResponse> {
         let output: MessageResponse = {
-            locationID: process.env.LOCATION_ID,
+            locationID: USER_CONFIG_FILE.locationID,
             originalROWID: message.ROWID,
             guid: message.guid,
             text: message.universalText(true),
