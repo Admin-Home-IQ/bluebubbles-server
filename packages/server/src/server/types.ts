@@ -24,6 +24,7 @@ export type ServerMetadataResponse = {
  */
 export type MessageResponse = {
     locationID: string;
+    userId: string;
     originalROWID: number;
     tempGuid?: string;
     guid: string;

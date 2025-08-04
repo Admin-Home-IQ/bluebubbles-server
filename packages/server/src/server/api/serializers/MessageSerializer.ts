@@ -128,6 +128,7 @@ export class MessageSerializer {
     }: MessageSerializerSingleParams): Promise<MessageResponse> {
         let output: MessageResponse = {
             locationID: USER_CONFIG_FILE.locationID,
+            userId: USER_CONFIG_FILE.userId,
             originalROWID: message.ROWID,
             guid: message.guid,
             text: message.universalText(true),
